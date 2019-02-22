@@ -105,6 +105,7 @@ class GameScene: SKScene {
     }
     
     func spinAll() {
+        self.run(SKAction.playSoundFileNamed("spin", waitForCompletion: false))
         let rnd1 = Int.random(in: 0...7)
         spinOne.position.y = spinOne.position.y - CGFloat(rnd1 * 69)
         
@@ -122,15 +123,29 @@ class GameScene: SKScene {
     
     func checkWin(a: Int, b: Int, c: Int){
         //animateNodes([spinOne, spinTwo, spinThree])
+        
+        jackpot += bet*2
         if a == b && b == c {
+            winning += jackpot
+            credit += jackpot
+            winning += bet*10
+            credit += bet*10
+            jackpot = 0
+            updateLabels()
+            self.run(SKAction.playSoundFileNamed("jackpot", waitForCompletion: true))
+            self.run(SKAction.playSoundFileNamed("win", waitForCompletion: true))
             print("Jackpot")
-            
         }
         else  if a == b || b == c || a == c {
-            print("2 Same")
+            winning += bet*5
+            credit += bet*5
+            updateLabels()
+            self.run(SKAction.playSoundFileNamed("win", waitForCompletion: true))
+            print("Win")
         } else {
             print("None")
         }
+        bet = 0
     }
     
     
@@ -189,7 +204,7 @@ class GameScene: SKScene {
     }
     
     func increaseScore() {
-        print("Height: \(UIScreen.main.bounds.height), Width: \(UIScreen.main.bounds.width)")
+        //print("Height: \(UIScreen.main.bounds.height), Width: \(UIScreen.main.bounds.width)")
         score += 1
         jackpotLabel.text = "\(score)"
         if score == -1{
