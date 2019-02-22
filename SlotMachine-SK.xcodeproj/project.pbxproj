@@ -8,26 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		5216CB11221F6D6B00226D7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216CB10221F6D6B00226D7D /* AppDelegate.swift */; };
-		5216CB13221F6D6B00226D7D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5216CB12221F6D6B00226D7D /* GameScene.sks */; };
-		5216CB15221F6D6B00226D7D /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5216CB14221F6D6B00226D7D /* Actions.sks */; };
 		5216CB17221F6D6B00226D7D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216CB16221F6D6B00226D7D /* GameScene.swift */; };
 		5216CB19221F6D6B00226D7D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216CB18221F6D6B00226D7D /* GameViewController.swift */; };
 		5216CB1C221F6D6B00226D7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5216CB1A221F6D6B00226D7D /* Main.storyboard */; };
 		5216CB1E221F6D6C00226D7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5216CB1D221F6D6C00226D7D /* Assets.xcassets */; };
 		5216CB21221F6D6C00226D7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5216CB1F221F6D6C00226D7D /* LaunchScreen.storyboard */; };
+		5216CB4B221F710E00226D7D /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5216CB49221F710E00226D7D /* Setting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5216CB0D221F6D6B00226D7D /* SlotMachine-SK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SlotMachine-SK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5216CB10221F6D6B00226D7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5216CB12221F6D6B00226D7D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		5216CB14221F6D6B00226D7D /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		5216CB16221F6D6B00226D7D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		5216CB18221F6D6B00226D7D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5216CB1B221F6D6B00226D7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5216CB1D221F6D6C00226D7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5216CB20221F6D6C00226D7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5216CB22221F6D6C00226D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5216CB49221F710E00226D7D /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +58,48 @@
 		5216CB0F221F6D6B00226D7D /* SlotMachine-SK */ = {
 			isa = PBXGroup;
 			children = (
-				5216CB10221F6D6B00226D7D /* AppDelegate.swift */,
-				5216CB12221F6D6B00226D7D /* GameScene.sks */,
-				5216CB14221F6D6B00226D7D /* Actions.sks */,
-				5216CB16221F6D6B00226D7D /* GameScene.swift */,
-				5216CB18221F6D6B00226D7D /* GameViewController.swift */,
-				5216CB1A221F6D6B00226D7D /* Main.storyboard */,
-				5216CB1D221F6D6C00226D7D /* Assets.xcassets */,
-				5216CB1F221F6D6C00226D7D /* LaunchScreen.storyboard */,
 				5216CB22221F6D6C00226D7D /* Info.plist */,
+				5216CB46221F710D00226D7D /* Scenes */,
+				5216CB44221F710D00226D7D /* Assets */,
+				5216CB45221F710D00226D7D /* Tamplates */,
+				5216CB47221F710D00226D7D /* ViewControllers */,
 			);
 			path = "SlotMachine-SK";
+			sourceTree = "<group>";
+		};
+		5216CB44221F710D00226D7D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5216CB1D221F6D6C00226D7D /* Assets.xcassets */,
+				5216CB1A221F6D6B00226D7D /* Main.storyboard */,
+				5216CB1F221F6D6C00226D7D /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5216CB45221F710D00226D7D /* Tamplates */ = {
+			isa = PBXGroup;
+			children = (
+				5216CB10221F6D6B00226D7D /* AppDelegate.swift */,
+				5216CB49221F710E00226D7D /* Setting.swift */,
+			);
+			path = Tamplates;
+			sourceTree = "<group>";
+		};
+		5216CB46221F710D00226D7D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5216CB16221F6D6B00226D7D /* GameScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5216CB47221F710D00226D7D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5216CB18221F6D6B00226D7D /* GameViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,10 +161,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5216CB1C221F6D6B00226D7D /* Main.storyboard in Resources */,
-				5216CB13221F6D6B00226D7D /* GameScene.sks in Resources */,
 				5216CB1E221F6D6C00226D7D /* Assets.xcassets in Resources */,
 				5216CB21221F6D6C00226D7D /* LaunchScreen.storyboard in Resources */,
-				5216CB15221F6D6B00226D7D /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +175,7 @@
 			files = (
 				5216CB17221F6D6B00226D7D /* GameScene.swift in Sources */,
 				5216CB19221F6D6B00226D7D /* GameViewController.swift in Sources */,
+				5216CB4B221F710E00226D7D /* Setting.swift in Sources */,
 				5216CB11221F6D6B00226D7D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
