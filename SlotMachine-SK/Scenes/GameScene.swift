@@ -13,7 +13,7 @@ class GameScene: SKScene {
     
     
     var score = Int(0)
-    var credit = Int(10000)
+    var credit = Int(1000)
     var winning = Int(0)
     var jackpot = Int(0)
     var bet = Int(0)
@@ -107,14 +107,24 @@ class GameScene: SKScene {
     func spinAll() {
         self.run(SKAction.playSoundFileNamed("spin", waitForCompletion: false))
         let rnd1 = Int.random(in: 0...7)
-        spinOne.position.y = spinOne.position.y - CGFloat(rnd1 * 69)
-        
         let rnd2 = Int.random(in: 0...7)
-        spinTwo.position.y = spinTwo.position.y - CGFloat(rnd2 * 69)
-        
         let rnd3 = Int.random(in: 0...7)
-        spinThree.position.y = spinThree.position.y - CGFloat(rnd3 * 69)
         
+        spinOne.run(SKAction.moveBy(x: 0, y: -600, duration: 0.3), completion: {
+                self.spinOne.position.y =  UIScreen.main.bounds.height/2 + 414
+                self.spinOne.position.y = self.spinOne.position.y - CGFloat(rnd1 * 69)
+            })
+            
+        spinTwo.run(SKAction.moveBy(x: 0, y: -600, duration: 0.3), completion: {
+                self.spinTwo.position.y =  UIScreen.main.bounds.height/2 + 414
+                self.spinTwo.position.y = self.spinTwo.position.y - CGFloat(rnd2 * 69)
+            })
+        spinThree.run(SKAction.moveBy(x: 0, y: -600, duration: 0.3), completion: {
+                self.spinThree.position.y =  UIScreen.main.bounds.height/2 + 414
+                self.spinThree.position.y = self.spinThree.position.y - CGFloat(rnd3 * 69)
+            })
+    
+
         //print("\(rnd1)   \(rnd2)   \(rnd3)")
         
         checkWin(a: rnd1, b: rnd2, c: rnd3)
@@ -124,7 +134,7 @@ class GameScene: SKScene {
     func checkWin(a: Int, b: Int, c: Int){
         //animateNodes([spinOne, spinTwo, spinThree])
         
-        jackpot += bet*2
+        jackpot += bet*10
         if a == b && b == c {
             winning += jackpot
             credit += jackpot
