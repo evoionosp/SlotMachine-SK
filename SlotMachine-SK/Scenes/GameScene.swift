@@ -12,7 +12,7 @@ import GameplayKit
 class GameScene: SKScene {
     
     
-    var score = Int(0)
+
     var credit = Int(1000)
     var winning = Int(0)
     var jackpot = Int(0)
@@ -53,6 +53,10 @@ class GameScene: SKScene {
                 if bet > 0 {
                     resetSpin()
                     spinAll()
+                } else {
+                    if credit < 1 {
+                        gameOver()
+                    }
                 }
             }
             if bet1Btn.contains(location){
@@ -88,7 +92,6 @@ class GameScene: SKScene {
     func resetScene(){
         self.removeAllChildren()
         self.removeAllActions()
-        score = Int(0)
         credit = Int(10000)
         winning = Int(0)
         jackpot = Int(0)
@@ -156,6 +159,9 @@ class GameScene: SKScene {
             print("None")
         }
         bet = 0
+        
+        
+        
     }
     
     
@@ -165,7 +171,7 @@ class GameScene: SKScene {
     
     
     func setupScene(){
-        self.backgroundColor = SKColor(red: 80.0/255.0, green: 192.0/255.0, blue: 203.0/255.0, alpha: 1.0)
+        self.backgroundColor = SKColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
         
         let background = SKSpriteNode(imageNamed: "background_1")
         background.anchorPoint = CGPoint.init(x: 0, y: 0)
@@ -213,15 +219,6 @@ class GameScene: SKScene {
         updateLabels()
     }
     
-    func increaseScore() {
-        //print("Height: \(UIScreen.main.bounds.height), Width: \(UIScreen.main.bounds.width)")
-        score += 1
-        jackpotLabel.text = "\(score)"
-        if score == -1{
-            jackpotLabel.text = "0"
-        }
-        
-    }
     
     func resetSpin() {
         spinOne.position = CGPoint(x: UIScreen.main.bounds.width/2 - 74, y: UIScreen.main.bounds.height/2 + 414)
@@ -232,10 +229,15 @@ class GameScene: SKScene {
     
     func gameOver() {
         print("Game Over !")
-        UserDefaults.standard.set(score, forKey: "RecentScore")
-        if score > UserDefaults.standard.integer(forKey: "HighScore"){
-            UserDefaults.standard.set(score, forKey: "HighScore")
+        
+        UserDefaults.standard.set(winning, forKey: "RecentScore")
+        
+        if winning > UserDefaults.standard.integer(forKey: "HighScore"){
+            UserDefaults.standard.set(winning, forKey: "HighScore")
         }
+        
+        let gameoverScene = SplashScene(size: view!.bounds.size)
+        view!.presentScene(gameoverScene)
     }
     
     

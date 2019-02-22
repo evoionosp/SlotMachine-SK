@@ -17,6 +17,7 @@
 		52BC90D422206268002E06B9 /* jackpot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 52BC90D322206268002E06B9 /* jackpot.wav */; };
 		52BC90D62220661E002E06B9 /* spin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 52BC90D52220661E002E06B9 /* spin.wav */; };
 		52BC90D82220689A002E06B9 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 52BC90D72220689A002E06B9 /* win.wav */; };
+		52BC90DA222071D3002E06B9 /* SplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC90D9222071D3002E06B9 /* SplashScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		52BC90D322206268002E06B9 /* jackpot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jackpot.wav; sourceTree = "<group>"; };
 		52BC90D52220661E002E06B9 /* spin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = spin.wav; sourceTree = "<group>"; };
 		52BC90D72220689A002E06B9 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
+		52BC90D9222071D3002E06B9 /* SplashScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				5216CB16221F6D6B00226D7D /* GameScene.swift */,
+				52BC90D9222071D3002E06B9 /* SplashScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5216CB17221F6D6B00226D7D /* GameScene.swift in Sources */,
+				52BC90DA222071D3002E06B9 /* SplashScene.swift in Sources */,
 				5216CB19221F6D6B00226D7D /* GameViewController.swift in Sources */,
 				5216CB4B221F710E00226D7D /* Setting.swift in Sources */,
 				5216CB11221F6D6B00226D7D /* AppDelegate.swift in Sources */,
